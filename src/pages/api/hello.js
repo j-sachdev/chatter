@@ -8,6 +8,8 @@ export default function handler(req, res) {
       .then((data) => {
         res.setHeader("Access-Control-Allow-Origin", "*");
         res.status(200).json({ name: data });
+      }).catch(err=>{
+        res.status(200).json({ name: JSON.stringify(err) });
       });
   }
   if (req.method == "GET") {

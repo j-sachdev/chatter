@@ -6,7 +6,8 @@ export default function handler(req, res) {
         return response.json();
       })
       .then((data) => {
-        res.setHeader('Access-Control-Allow-Origin', '*').status(200).json({ name: data });
+        res.setHeader('Access-Control-Allow-Origin', '*')        
+        res.status(200).json({ name: data });
       });
   }
 }
